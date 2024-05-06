@@ -1,0 +1,94 @@
+<!-- templates/result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction Result</title>
+    <!-- <link rel="stylesheet" href="styles\result.css"> -->
+    <style>
+        /* styles/result.css */
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, p {
+    text-align: center; /* Center align the text */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.result {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.prediction {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Button style */
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+.image-container {
+            text-align: center;
+        }
+
+.prediction-image {
+    width: 300px; /* Set the width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 350px; /* Set the maximum height */
+    margin-top: 20px; /* Adjust as needed */
+}
+
+    </style>
+   
+</head>
+<body>
+    <!-- <h1>Loan Prediction Result</h1>
+    <p>Prediction: {{ prediction }}</p> -->
+    <h1>Loan Prediction Result</h1>
+    <p>Prediction: {{ prediction }}</p>
+    <div class="image-container">
+        {% if prediction == "Approved" %}
+            <img class="prediction-image" src="{{ url_for('static', filename='loan_approved.png') }}" alt="Approved">
+        {% elif prediction == "Not Approved" %}
+            <img class="prediction-image" src="{{ url_for('static', filename='loan_denied.png') }}" alt="Not Approved">
+        {% endif %}
+    </div>
+</body>
+</html>

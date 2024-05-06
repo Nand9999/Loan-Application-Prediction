@@ -1,0 +1,22 @@
+
+/* Result container styles */
+.result-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Result message styles */
+.result-message {
+    font-size: 18px;
+    color: #007bff;
+}

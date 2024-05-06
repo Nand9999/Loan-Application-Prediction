@@ -1,0 +1,123 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Prediction</title>
+    <link rel="stylesheet" href="styles\index.css">
+<style>
+    /* Basic styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.form-group { /* Optional for grouping related fields visually */
+  margin-bottom: 20px;
+}
+
+/* Form layout adjustments */
+form {
+  max-width: 500px;
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Styling for specific elements */
+select {
+  appearance: none; /* Remove default dropdown styling */
+  /* Add custom styles for dropdown arrow */
+  background-image: url("data:image/svg+xml;base64,phN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgIGhlaWdodD0iOCIgdmlldجانبيةPSJubm9uZCIgIHZpZXdkb29tPSJmaWxsIiBjbGFzcz0iY2FyZXRcIj48cGF0aCBkPSJNMC00bDgwIDgwIDgwLTgwLTgwIDgwZTAgMHoiIGZpbGw9IiNjY2NjY2YiIHNlZmlsbC1ydWxlPSJubm9uZCIvPjwvc3ZnPg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+
+</style>
+
+
+  
+</head>
+<body>
+    <h1>Loan Prediction Form</h1>
+    <form action="/predict" method="post">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+        <label for="married">Married:</label>
+        <select id="married" name="married">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+        <label for="dependents">Dependents:</label>
+        <input type="text" id="dependents" name="dependents"><br><br>
+        <label for="education">Education:</label>
+        <select id="education" name="education">
+            <option value="Graduate">Graduate</option>
+            <option value="Not Graduate">Not Graduate</option>
+        </select><br><br>
+        <label for="self_employed">Self Employed:</label>
+        <select id="self_employed" name="self_employed">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br><br>
+        <label for="applicant_income">Applicant Income:</label>
+        <input type="text" id="applicant_income" name="applicant_income"><br><br>
+        <label for="coapplicant_income">Coapplicant Income:</label>
+        <input type="text" id="coapplicant_income" name="coapplicant_income"><br><br>
+        <label for="loan_amount">Loan Amount:</label>
+        <input type="text" id="loan_amount" name="loan_amount"><br><br>
+        <label for="loan_amount_term">Loan Amount Term:</label>
+        <input type="text" id="loan_amount_term" name="loan_amount_term"><br><br>
+        <label for="credit_history">Credit History:</label>
+        <input type="text" id="credit_history" name="credit_history"><br><br>
+        <label for="property_area">Property Area:</label>
+        <select id="property_area" name="property_area">
+            <option value="Urban">Urban</option>
+            <option value="Semiurban">Semiurban</option>
+            <option value="Rural">Rural</option>
+        </select><br><br>
+        <!-- <input type="submit" value="Submit"> -->
+        <input type="submit" id="predict-button" value="Predict">
+
+    </form>
+</body>
+</html>
